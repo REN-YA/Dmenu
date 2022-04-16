@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_15_073254) do
+ActiveRecord::Schema.define(version: 2022_04_16_080833) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "store_id"
@@ -60,9 +60,10 @@ ActiveRecord::Schema.define(version: 2022_04_15_073254) do
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "encrypted_password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone_number"
   end
 
 end
