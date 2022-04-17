@@ -1,0 +1,29 @@
+<div>
+  <table class="table">
+    <thead class="thead">
+      <tr>
+        <th>店舗名</th>
+        <th>カテゴリー数</th>
+        <th>ジャンル数</th>
+        <th>商品数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stores.each do |store| %>
+      <tr>
+        <td>
+          <%= link_to store_store_path(store.id) do %>
+          <%= store.name%>
+          <% end %>
+          
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <% end %>
+    </tbody>
+    
+  </table>
+  
+</div>
