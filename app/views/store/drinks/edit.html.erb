@@ -1,0 +1,41 @@
+<h1>ドリンク編集</h1>
+　
+　
+<div>
+  <%= form_with model: @drink, url: store_store_drinks_path(@store), local: true do |f| %>
+  <div>
+    <%= f.label 'ドリンク名', class: 'col-sm-8' %>
+    <%= f.text_field :name, class: 'col-sm-8', placeholder: "ドリンク名" %>
+  </div>
+  <div class='form-group'>
+    <%= f.label 'ジャンル名', class: 'col-sm-3' %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: '選択してください'}, class: 'col-sm-8' %>
+  </div>
+  <div class='form-group'>
+    <%= f.label 'ジャンル名', class: 'col-sm-3' %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: '選択してください'}, class: 'col-sm-8' %>
+  </div>
+  <div>
+    <%= f.label '販売価格名', class: 'col-sm-8' %>
+    <%= f.text_field :selling_price, class: 'col-sm-8', placeholder: "例)500円" %>
+  </div>
+  <div>
+    <%= f.label '原価', class: 'col-sm-8' %>
+    <%= f.text_field :cost, class: 'col-sm-8', placeholder: "例)50円" %>
+  </div>
+  <div>
+    <%= f.label '原価率', class: 'col-sm-8' %>
+    <%= f.text_field :cost_rate, class: 'col-sm-8', placeholder: "例)10%" %>
+  </div>
+  <div>
+    <%= f.label '商材', class: 'col-sm-8' %>
+    <%= f.text_field :material, class: 'col-sm-8', placeholder: "" %>
+  </div>
+  <div>
+    <%= f.label '作り方', class: 'col-sm-8' %>
+    <%= f.text_field :make, class: 'col-sm-8', placeholder: "" %>
+  </div>
+  <div class='text-center'>
+    <%= f.submit 'ドリンク情報', class: 'btn btn-success' %>
+  </div>
+  <% end %>
