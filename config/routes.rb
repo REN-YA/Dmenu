@@ -11,9 +11,6 @@ Rails.application.routes.draw do
       resources :genres, only: [:new, :create, :index, :show, :edit, :update, :destroy]
       resources :drinks, only: [:new, :create, :index, :show, :edit, :update, :destroy]
       end
-    resources :drinks, only: [:new, :create, :index, :show, :edit, :update, :destroy]
-    resources :genres, only: [:new, :create, :index, :show, :edit, :update, :destroy]
-    
     resources :employees, only: [:new, :create, :index, :show, :edit, :update, :destroy]
     resources :staffs, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
