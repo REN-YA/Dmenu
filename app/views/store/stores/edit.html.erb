@@ -1,2 +1,19 @@
 <h1>編集</h1>
 <%= link_to '店舗情報', store_store_path(@store.id), class: 'btn setting_btn btn-success' %>
+<%= form_with model: @store, url: store_stores_path, local: true do |f| %>
+<div>
+  <%= f.label '店舗名', class: 'col-sm-8' %>
+  <%= f.text_field :name, class: 'col-sm-8', placeholder: "店舗名" %>
+</div>
+<div>
+  <%= f.label 'メールアドレス', class: 'col-sm-8' %>
+  <%= f.text_field :email, class: 'col-sm-8', placeholder: "メールアドレス" %>
+</div>
+<div>
+  <%= f.label 'パスワード', class: 'col-sm-8' %>
+  <%= f.text_field :password_digest, class: 'col-sm-8', placeholder: "パスワード" %>
+</div>
+<div class='text-center'>
+  <%= f.submit '店舗情報変更', class: 'btn btn-success' %>
+</div>
+<% end %>
