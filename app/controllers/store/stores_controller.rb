@@ -4,7 +4,7 @@ class Store::StoresController < ApplicationController
     @store = Store.new
   end
 
-  def create#店舗登録
+  def create
     @store = Store.new(store_params)
     if @store.save
       redirect_to store_store_path(@store.id)
