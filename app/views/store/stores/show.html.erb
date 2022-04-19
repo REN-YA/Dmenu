@@ -7,4 +7,6 @@
     <%= link_to '店舗一覧', store_stores_path, class: 'btn setting_btn btn-success' %>
     <%= link_to 'カテゴリー作成&一覧', store_store_categories_path(@store), class: 'btn setting_btn btn-success' %>
     <%= link_to 'ジャンル作成&一覧', store_store_genres_path(@store), class: 'btn setting_btn btn-success' %>
+    <%= link_to 'ドリンク作成', new_store_store_drink_path(@store), class: 'btn setting_btn btn-success' %>
+    <%= link_to 'ドリンク一覧', store_store_drinks_path(@store), class: 'btn setting_btn btn-success' %>
 </div>

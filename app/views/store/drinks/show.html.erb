@@ -1,0 +1,17 @@
+<h1>ドリンク詳細</h1>
+<div>
+  <%= link_to '店舗', store_store_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'カテゴリー作成&一覧', store_store_categories_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ジャンル作成&一覧', store_store_genres_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ドリンク作成', new_store_store_drink_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ドリンク一覧', store_store_drinks_path(@store), class: 'btn setting_btn btn-success' %>
+</div>
+<%= link_to 'ドリンク情報編集', edit_store_store_drink_path(@store, @drink.id), class: 'btn setting_btn btn-success' %>
+<h3>
+  <%= @drink.name%>
+  <%= @drink.category.name%>
+  <%= @drink.genre.name%>
+  <%= @drink.selling_price%>
+  <%= @drink.cost%>
+  <%= @drink.cost_rate%>
+</h3>
