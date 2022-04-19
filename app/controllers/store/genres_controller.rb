@@ -1,49 +1,49 @@
 class Store::GenresController < ApplicationController
   def index
-    @category = Category.new
+    @genre = Genre.new
     @store = Store.find(params[:store_id])
-    @categories = Category.where(store_id: @store)
+    @genres = Genre.where(store_id: @store)
   end
 
   def create
-    @category = Category.new(category_params)
+    @genre = Genre.new(genre_params)
     @store = Store.find(params[:store_id])
-    @category.store_id = @store.id
-    if @category.save
-      redirect_to store_store_categories_path(@store)
+    @genre.store_id = @store.id
+    if @genre.save
+      redirect_to store_store_genres_path(@store)
     else
       @store = Store.find(params[:store_id])
-      @categories = Category.where(store_id: @store.id)
+      @genres = Genre.where(store_id: @store.id)
       render 'index'
     end
   end
 
   def edit
     @store = Store.find(params[:store_id])
-    @category = Category.find(params[:id])
+    @genre = Genre.find(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
+    @genre = Genre.find(params[:id])
      @store = Store.find(params[:store_id])
-     @category.store_id = @store.id
-    if @category.update(category_params)
-      redirect_to store_store_categories_path(@category.store_id, @category.id)
+     @Genre.store_id = @store.id
+    if @category.update(genre_params)
+      redirect_to store_store_genres_path(@genre.store_id, genre.id)
     else
       render 'edit'
     end
   end
 
   def destroy
-    @category = Category.find(params[:id])
+    @genre = Genre.find(params[:id])
     @store = Store.find(params[:store_id])
-    @category.destroy
-    redirect_to store_store_categories_path
+    @genre.destroy
+    redirect_to store_store_genres_path
   end
 
   private
-  def category_params
-    params.require(:category).permit(:name, :store_id)
+  def genre_params
+    params.require(:genre).permit(:name, :store_id, :category_id)
   end
 
 end
