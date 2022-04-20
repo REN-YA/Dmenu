@@ -10,3 +10,14 @@
     <%= link_to 'ドリンク作成', new_store_store_drink_path(@store), class: 'btn setting_btn btn-success' %>
     <%= link_to 'ドリンク一覧', store_store_drinks_path(@store), class: 'btn setting_btn btn-success' %>
 </div>
+<div>
+  <div>
+    <span>カテゴリー数  </span><%= @store.category_ids.count %>
+  </div>
+  <div>
+    <span>ジャンル数  </span><%= @store.genre_ids.count %>
+  </div>
+  <div>
+    <span>ドリンク数  </span><%= @store.drink_ids.count %>
+  </div>
+</div>

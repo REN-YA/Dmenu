@@ -3,6 +3,7 @@ class Store::GenresController < ApplicationController
     @genre = Genre.new
     @store = Store.find(params[:store_id])
     @genres = Genre.where(store_id: @store)
+    
   end
 
   def create

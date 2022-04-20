@@ -8,10 +8,22 @@
 </div>
 <%= link_to 'ドリンク情報編集', edit_store_store_drink_path(@store, @drink.id), class: 'btn setting_btn btn-success' %>
 <h3>
-  <%= @drink.name%>
-  <%= @drink.category.name%>
-  <%= @drink.genre.name%>
-  <%= @drink.selling_price%>
-  <%= @drink.cost%>
-  <%= @drink.cost_rate%>
+  <div>
+    <span>ドリンク名  </span><%= @drink.name%>
+  </div>
+  <div>
+    <span>カテゴリー名  </span><%= @drink.category.name%>
+  </div>
+  <div>
+    <span>ジャンル名  </span><%= @drink.genre.name%>
+  </div>
+  <div>
+    <span>販売価格  </span><%= @drink.selling_price%>
+  </div>
+  <div>
+    <span>原価  </span><%= @drink.cost%>
+  </div>
+  <div>
+    <span>原価率</span><%= @drink.cost_rate%>
+  </div>
 </h3>
