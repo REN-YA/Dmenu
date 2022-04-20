@@ -1,0 +1,48 @@
+<div class="page-title">
+  <h1 class="text-center">ドリンク作成</h1>
+</div>
+<div>
+  <%= link_to '店舗', store_store_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'カテゴリー作成&一覧', store_store_categories_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ジャンル作成&一覧', store_store_genres_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ドリンク一覧', store_store_drinks_path(@store), class: 'btn setting_btn btn-success' %>
+</div>
+<div>
+  <h4>ドリンク作成</h4>
+  <%= form_with model: @drink, url: store_store_drinks_path(@store), local: true do |f| %>
+  <div>
+    <%= f.label 'ドリンク名', class: '' %>
+    <%= f.text_field :name, class: '', placeholder: "ドリンク名" %>
+  </div>
+  <div class='form-group'>
+    <%= f.label 'カテゴリー名', class: '' %>
+    <%= f.collection_select :category_id, Category.where(store_id: @store), :id, :name, { prompt: '選択してください'}, class: '' %>
+  </div>
+  <div class='form-group'>
+    <%= f.label 'ジャンル名', class: '' %>
+    <%= f.collection_select :genre_id, Genre.where(store_id: @store), :id, :name, { prompt: '選択してください'}, class: '' %>
+  </div>
+  <div>
+    <%= f.label '販売価格名', class: '' %>
+    <%= f.text_field :selling_price, class: '', placeholder: "例)500円" %>
+  </div>
+  <div>
+    <%= f.label '原価', class: '' %>
+    <%= f.text_field :cost, class: '', placeholder: "例)50円" %>
+  </div>
+  <div>
+    <%= f.label '原価率', class: '' %>
+    <%= f.text_field :cost_rate, class: '', placeholder: "例)10%" %>
+  </div>
+  <div>
+    <%= f.label '商材', class: '' %>
+    <%= f.text_field :material, size: 40, class: 'text-material', placeholder: "" %>
+  </div>
+  <div>
+    <%= f.label '作り方', class: '' %>
+    <%= f.text_field :make, size: 40, class: 'text-make', placeholder: "" %>
+  </div>
+  <div class='text-center'>
+    <%= f.submit '新規登録', class: 'btn btn-success' %>
+  </div>
+  <% end %>

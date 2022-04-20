@@ -30,3 +30,25 @@
   position: fixed;//フッター固定用
   bottom: 0;//フッター固定用
 }
+
+.main{
+ width: 100%;
+ height: 100vh;
+}
+
+.page{
+ display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+}
+
+.text-material{
+ height: 100px;
+ margin-top: 5px;
+}
+
+.text-make{
+ height: 120px;
+ margin-top: 5px;
+}

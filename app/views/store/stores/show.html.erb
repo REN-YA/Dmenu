@@ -1,8 +1,23 @@
 <h1>
-  test
+  <%= @store.name%>
 </h1>
 <div>
     <%= link_to '編集', edit_store_store_path(@store.id), class: 'btn setting_btn btn-success' %>
     <%= link_to '削除', store_store_path(@store.id), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn setting_btn btn-danger "%>
     <%= link_to '店舗一覧', store_stores_path, class: 'btn setting_btn btn-success' %>
+    <%= link_to 'カテゴリー作成&一覧', store_store_categories_path(@store), class: 'btn setting_btn btn-success' %>
+    <%= link_to 'ジャンル作成&一覧', store_store_genres_path(@store), class: 'btn setting_btn btn-success' %>
+    <%= link_to 'ドリンク作成', new_store_store_drink_path(@store), class: 'btn setting_btn btn-success' %>
+    <%= link_to 'ドリンク一覧', store_store_drinks_path(@store), class: 'btn setting_btn btn-success' %>
+</div>
+<div>
+  <div>
+    <span>カテゴリー数  </span><%= @store.category_ids.count %>
+  </div>
+  <div>
+    <span>ジャンル数  </span><%= @store.genre_ids.count %>
+  </div>
+  <div>
+    <span>ドリンク数  </span><%= @store.drink_ids.count %>
+  </div>
 </div>

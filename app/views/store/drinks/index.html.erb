@@ -1,0 +1,48 @@
+<h1>ドリンク一覧</h1>
+<div>
+  <%= link_to '店舗', store_store_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'カテゴリー作成&一覧', store_store_categories_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ジャンル作成&一覧', store_store_genres_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ドリンク作成', new_store_store_drink_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ドリンク一覧', store_store_drinks_path(@store), class: 'btn setting_btn btn-success' %>
+</div>
+<div>
+  <% @categories.each do |category| %>
+  <div>
+    <h3><%= category.name %></h3>
+  </div>
+  <div>
+    <% @genres.each do |genre| %>
+    <div>
+      <h3><%= genre.name %></h3>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ドリンク名</th>
+          <th>販売価格名</th>
+          <th>原価</th>
+          <th>原価率名</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @drinks.each do |drink| %>
+      <tr>
+        <td>
+        <%= link_to store_store_drink_path(@store, drink.id) do %>
+        <%= drink.name%>
+        <% end %>
+        </td>
+        <td><%= drink.category.name%></td>
+        <td><%= drink.genre.name%></td>
+        <td><%= drink.selling_price%></td>
+        <td><%= drink.cost%></td>
+        <td><%= drink.cost_rate%></td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
+<% end %>
+</div>

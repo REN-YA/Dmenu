@@ -1,0 +1,44 @@
+<h1>ジャンル作成&一覧</h1>
+<div>
+  <%= link_to '店舗', store_store_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'カテゴリー作成&一覧', store_store_categories_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ジャンル作成&一覧', store_store_genres_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ドリンク作成', new_store_store_drink_path(@store), class: 'btn setting_btn btn-success' %>
+  <%= link_to 'ドリンク一覧', store_store_drinks_path(@store), class: 'btn setting_btn btn-success' %>
+</div>
+<div>
+  <h4>ジャンル作成</h4>
+  <%= form_with model: @genre, url: store_store_genres_path(@store), local: true do |f| %>
+  <div>
+    <%= f.label 'ジャンル名', class: 'col-sm-8' %>
+    <%= f.text_field :name, class: 'col-sm-8', placeholder: "例)仕込みorカルトorFD" %>
+  </div>
+  <div class='form-group'>
+    <%= f.label 'カテゴリー', class: 'col-sm-3' %>
+    <%= f.collection_select :category_id, Category.where(store_id: @store), :id, :name, { prompt: '選択してください'}, class: 'col-sm-8' %>
+  </div>
+  <div class='text-center'>
+    <%= f.submit '新規登録', class: 'btn btn-success' %>
+  </div>
+  <% end %>
+</div>
+
+<h2>ジャンル一覧</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ジャンル名</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @genres.each do |genre| %>
+    <tr>
+      <td><%= genre.name %></td>
+      <td><%= link_to '編集', edit_store_store_genre_path(@store.id, genre.id), class: 'btn setting_btn btn-success' %></td>
+      <td><%= link_to '削除', store_store_genre_path(@store.id, genre.id), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn setting_btn btn-danger "%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
