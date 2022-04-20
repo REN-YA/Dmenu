@@ -1,8 +1,8 @@
 <h1>ドリンク編集</h1>
-　
-　
+
+
 <div>
-  <%= form_with model: @drink, url: store_store_drinks_path(@store), local: true do |f| %>
+  <%= form_with model: @drink, url: store_store_drink_path, local: true do |f| %>
   <div>
     <%= f.label 'ドリンク名', class: 'col-sm-8' %>
     <%= f.text_field :name, class: 'col-sm-8', placeholder: "ドリンク名" %>
