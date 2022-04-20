@@ -20,16 +20,14 @@ class Store::CategoriesController < ApplicationController
   end
 
   def edit
-    @store = Store.find(params[:store_id])
     @category = Category.find(params[:id])
+    
   end
 
   def update
     @category = Category.find(params[:id])
-     @store = Store.find(params[:store_id])
-     @category.store_id = @store.id
     if @category.update(category_params)
-      redirect_to store_store_categories_path(@category.store_id, @category.id)
+      redirect_to store_store_categories_path
     else
       render 'edit'
     end
