@@ -1,7 +1,8 @@
-<h1>ドリンク編集</h1>
+<div class="title">
+  <h1>ドリンク編集</h1>
+</div>
 
-
-<div>
+<div class="drink-edit">
   <%= form_with model: @drink, url: store_store_drink_path, local: true do |f| %>
   <div>
     <%= f.label 'ドリンク名', class: 'col-sm-8' %>
@@ -29,13 +30,16 @@
   </div>
   <div>
     <%= f.label '商材', class: 'col-sm-8' %>
-    <%= f.text_field :material, class: 'col-sm-8', placeholder: "" %>
+    <%= f.text_field :material, size: 40,  class: 'col-sm-8', placeholder: "" %>
   </div>
   <div>
     <%= f.label '作り方', class: 'col-sm-8' %>
-    <%= f.text_field :make, class: 'col-sm-8', placeholder: "" %>
+    <%= f.text_field :make, size: 40, class: 'col-sm-8', placeholder: "" %>
   </div>
   <div class='text-center'>
     <%= f.submit 'ドリンク情報', class: 'btn btn-success' %>
   </div>
+  <% end %>
+  <%= link_to store_store_drink_path(@store, @drink.id) do %>
+    <h4>ドリンク詳細に戻る</h4>
   <% end %>
