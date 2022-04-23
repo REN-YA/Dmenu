@@ -1,14 +1,14 @@
-<div class="page-title">
-  <h1 class="text-center">ドリンク作成</h1>
+<div class="title">
+  <h1>ドリンク作成</h1>
 </div>
-<div>
+<div class="link-drink">
   <%= link_to '店舗', store_store_path(@store), class: 'btn setting_btn btn-success' %>
   <%= link_to 'カテゴリー作成&一覧', store_store_categories_path(@store), class: 'btn setting_btn btn-success' %>
   <%= link_to 'ジャンル作成&一覧', store_store_genres_path(@store), class: 'btn setting_btn btn-success' %>
   <%= link_to 'ドリンク一覧', store_store_drinks_path(@store), class: 'btn setting_btn btn-success' %>
 </div>
-<div>
-  <h4>ドリンク作成</h4>
+<div class="drink-new">
+  <h2>ドリンク作成</h2>
   <%= form_with model: @drink, url: store_store_drinks_path(@store), local: true do |f| %>
   <div>
     <%= f.label 'ドリンク名', class: '' %>
@@ -23,7 +23,7 @@
     <%= f.collection_select :genre_id, Genre.where(store_id: @store), :id, :name, { prompt: '選択してください'}, class: '' %>
   </div>
   <div>
-    <%= f.label '販売価格名', class: '' %>
+    <%= f.label '販売価格', class: '' %>
     <%= f.text_field :selling_price, class: '', placeholder: "例)500円" %>
   </div>
   <div>
