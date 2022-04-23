@@ -1,7 +1,9 @@
-<h1>カテゴリー更新</h1>
-<div class='col-4 text-center'>
+<div class="title">
+  <h1>カテゴリー更新</h1>
+</div>
+<div class='category-edit'>
   <%= form_with model: @category, url: store_store_category_path, local: true do |f| %>
-  <%= f.label 'カテゴリー名', class: 'col-sm-8' %>
+  <%= f.label 'カテゴリー名', class: 'col-sm-8' %><br>
   <%= f.text_field :name, class: 'col-sm-8', placeholder: "例)仕込みorカルトorFD" %>
   <br><%= f.submit 'カテゴリー名更新', class:'btn btn-primary' %></br>
   <% end %>

@@ -1,3 +1,29 @@
 // Place all the styles related to the store/genres controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//ここからindexページ
+.link-genre{
+  text-align: center;
+}
+
+.genre-information{
+  display: flex;
+  justify-content: center;
+}
+
+.genre-new{
+  margin: 10px 15px 0px 10px;
+}
+
+.genre-index{
+  margin: 10px 15px 0px 10px;
+}
+//ここまでindexページ
+
+//ここからindexページ
+.genre-edit{
+  text-align: center; 
+}
+//ここまでindexページ
