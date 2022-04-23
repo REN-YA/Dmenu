@@ -1,3 +1,28 @@
 // Place all the styles related to the store/categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//ここからindexページ
+.link-category{
+  text-align: center;
+}
+
+.category-imformation{
+  display: flex;
+  justify-content: center;
+}
+
+.category-new{
+  margin: 10px 15px 0px 10px;
+}
+
+.category-index{
+  margin: 10px 15px 0px 10px;
+}
+//ここまでindexページ
+
+//ここからeditページ
+ .category-edit{
+  text-align: center; 
+ }
+//ここまでeditページ

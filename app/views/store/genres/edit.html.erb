@@ -1,9 +1,11 @@
-<h1>ジャンル更新</h1>
-<div class='col-4 text-center'>
+<div class="title">
+  <h1>ジャンル更新</h1>
+</div>
+<div class='genre-edit'>
   <%= form_with model: @genre, url: store_store_genre_path, local: true do |f| %>
-  <%= f.label 'ジャンル名', class: 'col-sm-8' %>
-  <%= f.text_field :name, class: 'col-sm-8', placeholder: "例" %>
-  <%= f.label 'カテゴリー', class: 'col-sm-3' %>
+  <%= f.label 'ジャンル名', class: '' %>
+  <%= f.text_field :name, class: '', placeholder: "例" %>
+  <%= f.label 'カテゴリー', class: '' %>
     <%= f.collection_select :category_id, Category.where(store_id: @store.id), :id, :name, { prompt: '選択してください'}, class: 'col-sm-8' %>
   <br><%= f.submit 'ジャンル名更新', class:'btn btn-primary' %></br>
   <% end %>
