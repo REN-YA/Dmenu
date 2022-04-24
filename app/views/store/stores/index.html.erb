@@ -1,4 +1,4 @@
-<div>
+<div class="table-form">
   <table class="table">
     <thead class="thead">
       <tr>
@@ -15,15 +15,18 @@
           <%= link_to store_store_path(store.id) do %>
           <%= store.name%>
           <% end %>
-          
         </td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= store.category_ids.count %></td>
+        <td><%= store.genre_ids.count %></td>
+        <td>
+          <%= link_to store_store_drinks_path(store.id) do %>
+          <%= store.drink_ids.count %>
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>
-    
+
   </table>
-  
+
 </div>
