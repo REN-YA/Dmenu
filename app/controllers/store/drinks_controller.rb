@@ -19,7 +19,7 @@ class Store::DrinksController < ApplicationController
  def index
     @store = Store.find(params[:store_id])
     @categories = Category.where(store_id: @store)
-    @genres = Genre.where(store_id: @store)
+    @genres = Genre.where(category_id: @categories)
     @drinks = Drink.where(genre_id: @genres)
  end
 
