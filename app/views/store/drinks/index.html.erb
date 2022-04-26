@@ -13,40 +13,32 @@
   <div>
     <h2><%= category.name %></h2>
   </div>
-  <div class="drink-index-table">
+  <div>
     <% @genres.each do |genre| %>
     <div>
       <h3><%= genre.name %></h3>
     </div>
-    <div>
-    <table>
-      <thead class="drink-index-table">
-        <tr>
-          <th>ドリンク名</th>
-          <th>カテゴリー名</th>
-          <th>ジャンル名</th>
-          <th>販売価格名</th>
-          <th>原価</th>
-          <th>原価率名</th>
-        </tr>
-      </thead>
-      <tbody class="drink-index-table">
+    <div class="drink-index-ta">
+      <div><h3>ドリンク名</h3></div>
+      <div><h3>カテゴリー名</h3></div>
+      <div><h3>ジャンル名</h3></div>
+      <div><h3>販売価格名</h3></div>
+      <div><h3>原価</h3></div>
+      <div><h3>原価率</h3></div>
+    </div>
+    <div class="drink-index-table">
       <% @drinks.each do |drink| %>
-      <tr>
-        <td>
-        <%= link_to store_store_drink_path(@store, drink.id) do %>
-        <%= drink.name%>
-        <% end %>
-        </td>
-        <td><%= drink.category.name%></td>
-        <td><%= drink.genre.name%></td>
-        <td><%= drink.selling_price%></td>
-        <td><%= drink.cost%></td>
-        <td><%= drink.cost_rate%></td>
-      </tr>
+        <div>
+          <%= link_to store_store_drink_path(@store, drink.id) do %>
+          <%= drink.name%>
+          <% end %>
+        </div>
+        <div><%= drink.category.name%></div>
+        <div><%= drink.genre.name%></div>
+        <div><%= drink.selling_price%></div>
+        <div><%= drink.cost%></div>
+        <div><%= drink.cost_rate %></div>
       <% end %>
-      </tbody>
-    </table>
     </div>
     <% end %>
   <% end %>
