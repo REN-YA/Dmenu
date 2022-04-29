@@ -1,5 +1,5 @@
 <div class="title">
-  <h1>ドリンク一覧</h1>
+  <p>ドリンク一覧</p>
 </div>
 <div class="link-drink">
   <%= link_to '店舗', store_store_path(@store), class: 'btn setting_btn btn-success' %>
@@ -10,10 +10,10 @@
 </div>
 <div class="drink-index">
   <% @categories.each do |category| %>
-  <div>
+  <div class="drink-category">
     <h2><%= category.name %></h2>
   </div>
-  <div>
+  <div class="drink-genre">
     <% @genres.each do |genre| %>
     <div>
       <h3><%= genre.name %></h3>
