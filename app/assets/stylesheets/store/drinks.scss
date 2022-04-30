@@ -24,12 +24,10 @@
  }
 
  .drink-index-table{
-   display: flex;
-   justify-content: center;
    text-align: center;
  }
 
- .drink-category{
+ .drink-category-index{
   text-align: center;
   width: 100%;
   height: 50px;
@@ -40,7 +38,7 @@
   font-weight: bolder;
  }
 
- .drink-genre{
+ .drink-genre-index{
   text-align: center;
   width: 100%;
   height: 50px;
@@ -51,6 +49,50 @@
   font-weight: bolder;
   margin-top: 10px;
  }
+
+.drink-box{
+  width: 200px;
+  height: 250px;
+  background-color: #DDDDDD;
+  border: 2px solid;
+  border-radius: 10px;
+  margin: 5px 5px 5px 5px;
+}
+.drink-name{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.drink-category{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.drink-genre{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.drink-price{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.drink-cost{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.drink-cost-rate{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
 //ここまでindexページ
 
 //ここからshowページ
@@ -62,6 +104,8 @@
   text-align: center;
 
 }
+
+
 //ここまでshowページ
 
 //ここからeditページ
