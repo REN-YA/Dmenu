@@ -1,3 +1,30 @@
+<div class="title">
+  <p>店舗一覧</p>
+</div>
+<div>
+  <div class="table-form">
+    <div class="name">店舗名</div>
+    <div class="category">カテゴリー数</div>
+    <div class="genre">ジャンル数</div>
+    <div class="drinks">商品数</div>
+  </div>
+  <% @stores.each do |store| %>
+    <div class="drink-information-index">
+      <div>
+        <%= link_to store_store_path(store.id) do %>
+        <%= store.name%>
+        <% end %>
+      </div>
+      <div><%= store.category_ids.count %></div>
+      <div><%= store.genre_ids.count %></div>
+      <div>
+        <%= link_to store_store_drinks_path(store.id) do %>
+        <%= store.drink_ids.count %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
 <div class="table-form">
   <table class="table">
     <thead class="thead">
