@@ -18,8 +18,36 @@
 .table-form{
   width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
+.drink-information-index{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.name{
+  width: 100px;
+  border: 2px solid;
+}
+
+.category{
+  width: 100px;
+  border: 2px solid;
+}
+
+.genre{
+  width: 100px;
+  border: 2px solid;
+}
+
+.drinks{
+  width: 100px;
+  border: 2px solid;
+}
 //ここまでindexページ
 
 //ここからnewページ
