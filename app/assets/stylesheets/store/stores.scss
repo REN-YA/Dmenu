@@ -14,6 +14,9 @@
 //ここまで共通ページ
 
 //ここからindexページ
+.index-title{
+  margin-top: 10px;
+}
 
 .table-form{
   width: 100%;
@@ -27,6 +30,26 @@
   text-align: center;
   display: flex;
   justify-content: center;
+}
+
+.name-title{
+  width: 100px;
+  border: 2px solid;
+}
+
+.category-title{
+  width: 100px;
+  border: 2px solid;
+}
+
+.genre-title{
+  width: 100px;
+  border: 2px solid;
+}
+
+.drinks-title{
+  width: 100px;
+  border: 2px solid;
 }
 
 .name{
@@ -67,4 +90,7 @@
 //ここまでshowページ
 
 //ここからeditページ
+.edit-information{
+  text-align: center;
+}
 //ここまでeditページ
