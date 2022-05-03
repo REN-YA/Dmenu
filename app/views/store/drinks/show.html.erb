@@ -1,5 +1,5 @@
 <div class="title">
-  <h1>ドリンク詳細</h1>
+  <p>ドリンク詳細</p>
 </div>
 <div class="link-drink">
   <%= link_to '店舗', store_store_path(@store), class: 'btn setting_btn btn-success' %>
@@ -11,7 +11,7 @@
 <div class="link-drink">
   <%= link_to 'ドリンク情報編集', edit_store_store_drink_path(@store, @drink.id), class: 'btn setting_btn btn-success' %>
 </div>
-  
+
 <div class="drink-information">
   <div>
     <span>ドリンク名  </span><%= @drink.name%>

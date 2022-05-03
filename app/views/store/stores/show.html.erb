@@ -1,7 +1,5 @@
 <div class="title">
-  <h1>
-    <%= @store.name%>
-  </h1>
+  <p><%= @store.name%></p>
 </div>
 <div class="link-store">
     <%= link_to '編集', edit_store_store_path(@store.id), class: 'btn setting_btn btn-success' %>
