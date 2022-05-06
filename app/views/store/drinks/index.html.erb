@@ -11,12 +11,12 @@
 <div class="drink-index">
   <% @categories.each do |category| %>
   <div class="drink-category-index">
-    <h2><%= category.name %></h2>
+    <p><%= category.name %></p>
   </div>
   <div>
     <% @genres.each do |genre| %>
     <div class="drink-genre-index">
-      <%= genre.name %>
+      <p><%= genre.name %></p>
     </div>
   </div>
     <div class="drink-index-table">
